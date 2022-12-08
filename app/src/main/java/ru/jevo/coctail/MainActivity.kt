@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-             //   loadApiData(p0.toString())
+                   loadApiData(p0.toString())
             }
 
             override fun afterTextChanged(p0: Editable?) {
@@ -63,9 +63,9 @@ class MainActivity : AppCompatActivity() {
 
 
         viewModel.coctailList.observe(this, {
-         //   recyclerView.adapter = cocAdapter
-         //   cocAdapter.notifyDataSetChanged()
-
+            recyclerView.adapter = cocAdapter
+            cocAdapter.notifyDataSetChanged()
+            fillList()
 
             (it).forEach { i -> println(i.body) }
 
